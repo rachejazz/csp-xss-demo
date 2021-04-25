@@ -1,0 +1,1 @@
+{"name":"xss-server","version":"0.0.1","dependencies":{"express":"4.13.3","fs":"*","multer":"1.1.0","serve-index":"^1.9.1"},"scripts":{"start":"nodemon server.js"},"devDependencies":{"mocha":"~2.3.3","nodemon":"^2.0.7","should":"~7.1.0","supertest":"~1.1.0"}}
