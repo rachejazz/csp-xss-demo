@@ -13,7 +13,7 @@ var storage =   multer.diskStorage({
 });
 var upload = multer({ storage : storage}).single('myfile');  
 var uploadsdir = __dirname + '/uploads'
-//console.log(__dirname+"/index.html")
+app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res){ 
 	res.setHeader(
 	"Content-Security-Policy", "default-src 'self'; script-src 'self'"
@@ -53,14 +53,6 @@ app.get('/lists', (req, res) => {
 
 app.use('/uploads', express.static('/uploads'), serveIndex('./uploads', { 'icons': true }))
 
-app.use('/uploads/testjs', function(req,res) {
-		res.sendFile(__dirname + '/uploads/testjs');
-});
-
-app.use('/uploads/small.gif', function(req,res) {
-		res.sendFile(__dirname + '/uploads/small.gif');
-});
-
 fs.readdir(uploadsdir, function (err, files) {
    if (err) {
         return console.log('Unable to scan directory: ' + err);
@@ -68,7 +60,6 @@ fs.readdir(uploadsdir, function (err, files) {
     files.forEach(function (file) {
 	filelist = uploadsdir + '/' + file
 	file_l = '/uploads/' + file
-	console.log(filelist)
 	app.use(file_l, function(req,res) {
 		res.sendFile(filelist);
 	});
