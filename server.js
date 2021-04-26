@@ -13,7 +13,6 @@ var storage =   multer.diskStorage({
 });
 var upload = multer({ storage : storage}).single('myfile');  
 var uploadsdir = __dirname + '/uploads'
-app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res){ 
 	res.setHeader(
 	"Content-Security-Policy", "default-src 'self'; script-src 'self'"
@@ -37,8 +36,8 @@ app.get('/list', (req, res) => {
 app.get('/lists', (req, res) => {
     res.set('X-XSS-Protection', '0');
 	res.setHeader(
-	//"Content-Security-Policy", "default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'    ; style-src 'self'; frame-src 'self'"
-	"Content-Security-Policy", "default-src 'self'"
+	"Content-Security-Policy", "default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'"
+	//"Content-Security-Policy", "default-src 'self'"
 	);
 	res.removeHeader('X-Content-Type-Options');
     res.removeHeader('Content-Type');
@@ -58,6 +57,7 @@ fs.readdir(uploadsdir, function (err, files) {
         return console.log('Unable to scan directory: ' + err);
     } 
     files.forEach(function (file) {
+	console.log(file)
 	filelist = uploadsdir + '/' + file
 	file_l = '/uploads/' + file
 	app.use(file_l, function(req,res) {
