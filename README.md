@@ -35,5 +35,5 @@ XSS triggered.
 ## Change the CSP:
 You can  try changing the preset CSP from the `server.js` file[under the /lists section]. This is all about demo.
 
-
+## Credits:
 This is all possible through the wonderful talk [Funky File Formats](https://fahrplan.events.ccc.de/congress/2014/Fahrplan/system/attachments/2562/original/Funky_File_Formats.pdf) by [Ange Albertini](https://twitter.com/angealbertini)
