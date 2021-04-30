@@ -76,5 +76,5 @@ app.post('/form',function(req,res){
 });  
   
 app.listen(2000,function(){  
-    console.log("Server is running at http://localhost:2000");  
+    console.log("Server is running at http://0.0.0.0:2000");
 });  
