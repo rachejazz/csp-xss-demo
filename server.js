@@ -36,7 +36,7 @@ app.get('/list', (req, res) => {
 app.get('/lists', (req, res) => {
     res.set('X-XSS-Protection', '0');
 	res.setHeader(
-	"Content-Security-Policy", "default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'"
+	"Content-Security-Policy", "default-src 'self'; font-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'"
 	//"Content-Security-Policy", "default-src 'self'"
 	);
 	res.removeHeader('X-Content-Type-Options');

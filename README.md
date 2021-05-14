@@ -7,7 +7,7 @@ npm install
 ```
 or
 ```
-yarn
+yarn install
 ```
 
 ## Start server:
