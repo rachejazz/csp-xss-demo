@@ -1,5 +1,5 @@
 # CSP Bypass Demo using XSS Polyglot attack
-I have written a detailed blog about this demo: [Here](https://rachejazz.me/2019/05/14/AbusingCSP.html)
+I have written a detailed blog about this demo: [Here](https://rachejazz.me/2023/07/30/AbusingCSP.html)
 
 ## Install:
 
